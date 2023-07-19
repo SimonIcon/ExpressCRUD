@@ -6,7 +6,7 @@ const route = express.Router()
 route.get('/', async (req, res) => {
     try {
         const allPost = await Post.find()
-        req.json(allPost)
+        res.send(allPost)
 
     } catch (error) {
         console.log(`error occured while fetching data ${error}`)
